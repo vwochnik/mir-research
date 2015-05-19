@@ -1,19 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Journal Article
-% LaTeX Template
-% Version 1.3 (9/9/13)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Frits Wenneker (http://www.howtotex.com)
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \documentclass[twoside]{article}
 
 \usepackage{lipsum}
@@ -30,22 +14,13 @@
 \usepackage{hyperref}
 \usepackage{lettrine}
 \usepackage{paralist}
-\usepackage{abstract}
-\renewcommand{\abstractnamefont}{\normalfont\bfseries}
-\renewcommand{\abstracttextfont}{\normalfont\small\itshape}
 \usepackage{titlesec}
 \renewcommand\thesection{\Roman{section}}
 \renewcommand\thesubsection{\Roman{subsection}}
 \titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{}
 \titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{}
 
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhead{} \fancyfoot{}
-\fancyhead[C]{Personal Information Management Systems $\bullet$ May 2015}
-\fancyfoot[RO,LE]{\thepage}
-
-\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont\textbf{Comparison of Traditional Personal Information Management Systems with a Newly Proposed Relational System}}
+\title{\vspace{-15mm}\fontsize{14pt}{10pt}\selectfont\textbf{Comparison of Traditional Personal Information Management Systems with a Newly Proposed Relational System}}
 \author{
 \large
 \textsc{Vincent Wochnik}\\[2mm]
@@ -57,13 +32,10 @@
 
 \begin{document}
 \maketitle
-\thispagestyle{fancy}
 
-\begin{abstract}
-\input{0_abstract}
-\end{abstract}
 
 \begin{multicols}{2}
+\input{0_abstract}
 \input{1_introduction}
 \input{2_criteria}
 \input{3_analysis_of_existing_systems}
