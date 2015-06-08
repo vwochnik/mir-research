@@ -1,5 +1,6 @@
-PDFLATEX	?= pdflatex
-BIBTEX		?= bibtex
+PDFLATEX	     ?= pdflatex
+BIBTEX		     ?= bibtex
+MAKEGLOSSARIES ?= makeglossaries
 
 ## Name of the target file, minus .pdf: e.g., TARGET=mypaper causes this
 ## Makefile to turn mypaper.tex into mypaper.pdf.
@@ -45,6 +46,7 @@ BIBDEPS = %.bbl
 endif
 
 $(PDFTARGETS): %.pdf: %.tex %.aux $(BIBDEPS) $(INCLUDEDTEX)
+	$(MAKEGLOSSARIES) $(TARGET).glo
 	$(PDFLATEX) $*
 ifneq ($(strip $(BIBFILES)),)
 	@if grep -q "undefined references" $*.log; then \
@@ -58,4 +60,5 @@ clean:
 		$(T).out $(T).pdf $(T).blg $(T).bbl \
 		$(T).lof $(T).lot $(T).toc $(T).idx \
 		$(T).nav $(T).snm) \
-		$(AUXFILES) $(LOGFILES)
+		$(AUXFILES) $(LOGFILES) $(TARGET).gls $(TARGET).glo \
+		$(TARGET).glsdefs $(TARGET).ist

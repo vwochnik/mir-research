@@ -19,6 +19,8 @@
 \renewcommand\thesubsection{\Roman{subsection}}
 \titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{}
 \titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{}
+\usepackage[nonumberlist]{glossaries}
+\makeglossaries
 
 \title{\fontsize{14pt}{10pt}\selectfont\textbf{Comparison of Traditional Personal Information Management Systems with a Newly Proposed Relational System}}
 \author{
@@ -31,6 +33,9 @@
 \date{}
 
 \begin{document}
+
+\newglossaryentry{pims}{name=PIMS, description={Personal Information Management Systems}}
+
 \maketitle
 \begin{multicols}{2}
 \input{0_abstract}
@@ -43,5 +48,7 @@
 \begin{thebibliography}{99}
 \input{99_bibliography}
 \end{thebibliography}
+\glsaddall
+\printglossaries
 \end{multicols}
 \end{document}

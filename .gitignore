@@ -5,5 +5,10 @@
 *.pdf
 *.old
 *.tmp
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.ist
 *~
 
