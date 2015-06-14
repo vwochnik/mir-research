@@ -8,7 +8,10 @@
 *.glg
 *.glo
 *.gls
+*.bbl
+*.blg
+*-blx.bib
 *.glsdefs
+*.run.xml
 *.ist
 *~
-

@@ -1,5 +1,5 @@
 PDFLATEX	     ?= pdflatex
-BIBTEX		     ?= bibtex
+BIBTEX		     ?= bibtex8 --wolfgang
 MAKEGLOSSARIES ?= makeglossaries
 
 ## Name of the target file, minus .pdf: e.g., TARGET=mypaper causes this
@@ -46,7 +46,8 @@ BIBDEPS = %.bbl
 endif
 
 $(PDFTARGETS): %.pdf: %.tex %.aux $(BIBDEPS) $(INCLUDEDTEX)
-	$(MAKEGLOSSARIES) $(TARGET).glo
+	@if [ -a $(TARGET).glo ]; then \
+	  $(MAKEGLOSSARIES) $(TARGET).glo; fi
 	$(PDFLATEX) $*
 ifneq ($(strip $(BIBFILES)),)
 	@if grep -q "undefined references" $*.log; then \
@@ -60,5 +61,5 @@ clean:
 		$(T).out $(T).pdf $(T).blg $(T).bbl \
 		$(T).lof $(T).lot $(T).toc $(T).idx \
 		$(T).nav $(T).snm) \
-		$(AUXFILES) $(LOGFILES) $(TARGET).gls $(TARGET).glo \
-		$(TARGET).glsdefs $(TARGET).ist
+		$(T).glg $(T).glo $(T).gls \ $(T).glsdefs $(T).ist \
+		$(AUXFILES) $(LOGFILES)

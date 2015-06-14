@@ -22,6 +22,9 @@
 \usepackage[nonumberlist]{glossaries}
 \makeglossaries
 
+\usepackage[backend=bibtex,style=numeric-comp]{biblatex}
+\bibliography{index}
+
 \title{\fontsize{14pt}{10pt}\selectfont\textbf{Comparison of Traditional Personal Information Management Systems with a Newly Proposed Relational System}}
 \author{
 \large
@@ -44,9 +47,7 @@
 \input{3_proposal_of_a_solution}
 \input{4_conclusion}
 
-\begin{thebibliography}{99}
-\input{99_bibliography}
-\end{thebibliography}
+\printbibliography
 \glsaddall
 \printglossaries
 \end{multicols}
