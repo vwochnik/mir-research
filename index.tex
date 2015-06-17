@@ -12,6 +12,7 @@
 \usepackage{booktabs}
 \usepackage{float}
 \usepackage{hyperref}
+%\hypersetup{colorlinks=true}
 \usepackage{lettrine}
 \usepackage{paralist}
 \usepackage{titlesec}
@@ -22,10 +23,14 @@
 \usepackage[nonumberlist]{glossaries}
 \makeglossaries
 
+% floatless figure
+\newenvironment{flfigure}{\par\begingroup\captionsetup{type=figure}}{\endgroup\par}
+
 \usepackage[backend=bibtex,style=numeric-comp]{biblatex}
 \bibliography{index}
 
 \title{\fontsize{14pt}{10pt}\selectfont\textbf{Comparison of Traditional Personal Information Management Systems with a Newly Proposed Relational System}}
+% A new user interaction concept for unstructured data
 \author{
 \large
 \textsc{Vincent Wochnik}\\[2mm]
@@ -43,9 +48,15 @@
 \begin{multicols}{2}
 \input{0_abstract}
 \input{1_introduction}
+% current approaches
+% Many visualizations (mind maps/ labels / etc) available but not combination
+% beispiel -> mindmap nee mit smartphone interaktiv
 \input{2_criteria_of_acceptable_solutions}
+% proposed solution
 \input{3_proposal_of_a_solution}
 \input{4_conclusion}
+
+% figures mit textverweis ! jede figure und caption
 
 \printbibliography
 \glsaddall
