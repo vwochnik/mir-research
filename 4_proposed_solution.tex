@@ -1,22 +1,16 @@
 \section{Proposed Solution}
 
-This proposed solution as an improved user interaction concept allows for a very
-flexible and interactive \gls{pims} allowing the user
-The proposal: An atomic data management system utilizing a smartwatch to take advantage of faster and more instantaneous data input.
-The here proposed solution features a \gls{pims} supporting relationships
-between bits of information. Since the proposed solution does not store
-information sequentially but relationally, the reorganization of existing
-information is possible without changing the information itself.
+The solution proposed in this article centers around chunks of data which can be
+organized by the user by means of different visualization models after being
+inserted by the user from any data source supported by an implementation.
 
-% deals with chunks of data
-
-\subsection{Unstructured Data}
+\subsection{Unstructured Chunks of Data}
 
 Various types of unstructured data can be seen in figure \ref{fig:unstructdata}
-but unstructured data doesn't oppose any restrictions upon the user of the
-\gls{pims} or what the implementation of such system itself. Basic
-implementations can stick to text and graphical data. However, as the system
-grows so do the needs of the user.
+but unstructured data doesn't oppose any restrictions upon the user or the
+implementation of the user interaction concept itself. Basic implementations can
+stick to text and graphical data. However, as the system grows so do the needs
+of the user.
 
 \begin{flfigure}
   \centering
@@ -35,8 +29,8 @@ information within the \gls{pims}.
 
 \subsection{Data Sources}
 
-In principle, any platform that implements a \gls{pims} that adheres to this
-proposal can be a data source. However, this system is not meant to be
+In principle, any platform implementing a \gls{pims} that adheres to the
+proposed concept can be a data source. However, this system is not meant to be
 restricted to a particular platform but more so be a hub where any platform the
 user chooses is supported in such a way that data can be inserted by the user.
 Figure \ref{fig:datasources} shows a diagram of possible data sources across
@@ -52,17 +46,15 @@ multiple platforms.
 \subsection{Organization of Data}
 
 The organization of unstructured data is on a par with the available
-visualizations thereof. That means that a \gls{pims} implementing all presented
-visualizations allows the organization of unstructured data by any of those
-visualizations or a combination thereof.
+visualizations within an implementation. That means that a \gls{pims}
+implementing all presented visualizations allows the organization of unstructured
+data by any of those visualizations or a combination thereof.
 
 For instance, a system that supports connections between unstructured data and
 a coordinate system must allow the user to connect chunks of unstructured data
 with each other and simultaneously place these same chunks on a coordinate system.
 A system need not support all visualizations presented in this paper or can
 implement further visualizations not presented here.
-
-Previously inserted atomic bits of data can be organized using a variety of models which are not all specified in this document. The more obvious ones are folders and labels as well as relationships between atomic data which can then be visualized as maps and radial relationship diagrams.
 
 \subsection{Connections of Data}
 
@@ -79,7 +71,7 @@ chunk in the center.
   \label{fig:visualconnections}
 \end{flfigure}
 
-\subsubsection{Labels}
+\subsection{Labeling Data}
 
 Figure \ref{fig:visuallabels} shows the organization of chunks of data by
 folders, here called labels. The visual representation looks quite similar to
@@ -92,7 +84,13 @@ the figure but can take other forms.
   \label{fig:visuallabels}
 \end{flfigure}
 
-\subsubsection{Timeline}
+\subsection{Data Timeline}
+
+Figure \ref{fig:visualtimeline} shows chunks of data within a timeline.
+Organization using this model allows the user of the \gls{pims} to associate
+chunks of data to relative or fixed points in time. Basically, this is a
+one-dimensional coordinate system. Implementations do not have to restrict the
+user to a timeline but can allow user-defined scales.
 
 \begin{flfigure}
   \centering
@@ -101,9 +99,14 @@ the figure but can take other forms.
   \label{fig:visualtimeline}
 \end{flfigure}
 
-Data atoms can be ordered by time either manually specified or by the creation time of the data atom itself.
+\subsection{Data within a Coordinate System}
 
-\subsubsection{Matrix}
+Figure \ref{fig:visualcoordsys} shows a two-dimensional coordinate system with
+chunks of data fixed to a certain point. This model must allow the user the
+definition of the horizontal and vertical axis to allow a flexible use of the
+coordinate system for multiple purposes. For instance, it can be used as the
+\textit{importance-urgency matrix} or the \textit{growth-share matrix} but is
+not restricted to those use cases.
 
 \begin{flfigure}
   \centering
@@ -112,5 +115,21 @@ Data atoms can be ordered by time either manually specified or by the creation t
   \label{fig:visualcoordsys}
 \end{flfigure}
 
-As seen in figure \ref{fig:visualcoordsys}, ...
-Data atoms can be part of a two-dimensional matrix which can then be visualized.
+\subsection{Interaction with Visualization Models}
+
+An implementation of the user interaction concept proposed here must allow the
+user to interact with the visualizations. In particular, the user must be able
+to organize chunks of data by interacting with the visualization itself. For
+instance, connections must be changeable within the connections visualization or
+chunks of data must be moveable within the coordinate system. How those
+interactions are implemented is up to the implementation.
+
+Furthermore, the user must be able to switch between visualizations easily.
+There can be a collections of available visualization models for the user to
+choose from but the user must also be able to switch to another visualization
+by a pivotal chunk of unstructured data. For instance, a chunk of data which is
+present in a connections visualization and a coordinate system can be used by
+the user to switch to one of those visualizations. Whether the transition is
+animated is up to the implementation. But if so, the pivotal chunk of data
+should not disappear during the transition indicating to the user the pivotal
+nature of this data chunk.
